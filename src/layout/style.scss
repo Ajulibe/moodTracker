@@ -1,5 +1,18 @@
 .layout {
-  max-width: 1104px;
+  max-width: 1200px;
   display: flex;
   justify-content: space-between;
+  overflow: hidden;
+
+  //media-queries
+  @media only screen and (max-width: 1095px) {
+    flex-direction: column;
+    padding-bottom: 100px;
+    padding-top: 20px;
+  }
+
+  //media-queries
+  @media only screen and (max-width: 593px) {
+    margin: 0 auto;
+  }
 }

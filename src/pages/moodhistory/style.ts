@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { flexmiddle } from "sass/abstracts/mixins";
+import { COLORS } from "theme/colors";
 
 export const Container = styled.div`
   .container {
@@ -10,8 +11,15 @@ export const Container = styled.div`
     box-sizing: border-box;
     border-radius: 15px;
     padding-top: 40px;
-    border: 1px solid red;
-    height: 80vh;
+    height: 54rem;
+
+    @media only screen and (max-width: 593px) {
+      width: 40.4rem;
+    }
+
+    @media only screen and (max-width: 439px) {
+      width: 30.4rem;
+    }
 
     &-header {
       display: flex;
@@ -27,7 +35,7 @@ export const Container = styled.div`
         font-weight: bold;
         font-size: 24px;
         line-height: 26px;
-        color: #35100c;
+        color: ${COLORS.black};
       }
 
       &__text {
@@ -36,7 +44,7 @@ export const Container = styled.div`
         line-height: 26px;
         letter-spacing: 2px;
         text-transform: uppercase;
-        color: rgba(53, 16, 12, 0.5);
+        color: ${COLORS.fadedBlack};
         margin-top: 15px;
       }
     }
@@ -45,11 +53,15 @@ export const Container = styled.div`
       overflow: scroll;
       flex: 1;
       padding: 20px;
+
+      @media only screen and (max-width: 593px) {
+        padding: unset;
+      }
     }
 
     .history {
       width: 34.5rem;
-      border: 1px solid #efeeee;
+      border: 1px solid ${COLORS.disbaledButtonBg};
       box-sizing: border-box;
       border-radius: 5px;
       margin-top: 5.4rem;
@@ -66,7 +78,7 @@ export const Container = styled.div`
         font-size: 16px;
         line-height: 18px;
         text-align: center;
-        color: #afaaa8;
+        color: ${COLORS.emptyMoodText};
         margin-top: 13px;
         margin-bottom: 7.7rem;
       }

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { flexmiddle } from "sass/abstracts/mixins";
+import { COLORS } from "theme/colors";
 
 export const Container = styled.div`
   .container {
@@ -7,7 +8,7 @@ export const Container = styled.div`
     ${flexmiddle};
     flex-direction: column;
     padding: 10.3rem 0 10.2rem 0;
-    border: 1px solid #c4c4c4;
+    border: 1px solid ${COLORS.moodBoxBorder};
     box-sizing: border-box;
     border-radius: 15px;
     margin-right: 170px;
@@ -23,9 +24,13 @@ export const Container = styled.div`
       font-size: 24px;
       line-height: 26px;
       text-align: center;
-      color: #898583;
+      color: ${COLORS.primaryText};
       width: 28.4rem;
       margin-bottom: 5.7rem;
+
+      @media only screen and (max-width: 593px) {
+        font-size: 18px;
+      }
     }
 
     &-emoji {
@@ -45,7 +50,7 @@ export const Container = styled.div`
         border-radius: 50%;
         ${flexmiddle};
         margin: 0 10px 0 10px;
-        background: rgba(175, 170, 168, 0.2);
+        background: ${COLORS.emptyMood};
         transition: all 0.2s ease-in-out;
 
         &:hover {
@@ -54,10 +59,25 @@ export const Container = styled.div`
         }
       }
     }
+
+    //media-queries
+    @media only screen and (max-width: 1276px) {
+      margin-right: 10px;
+    }
+
+    @media only screen and (max-width: 1095px) {
+      margin-right: 0px;
+      width: unset;
+      margin-bottom: 20px;
+    }
   }
 `;
 
-export const SaveButton = styled.button`
+interface ButtonProps {
+  disabled: Boolean;
+}
+
+export const SaveButton = styled.button<ButtonProps>`
   width: 134px;
   height: 41px;
   border-radius: 5px;
@@ -67,6 +87,10 @@ export const SaveButton = styled.button`
   font-weight: bold;
   font-size: 18px;
   line-height: 26px;
-  color: #ffffff;
-  ${(props) => (props.disabled ? "background: #efeeee" : "background: #120C35")}
+  color: ${COLORS.white};
+
+  ${(props) =>
+    props.disabled
+      ? `background: ${COLORS.disbaledButtonBg}`
+      : `background: ${COLORS.activeButtonBg}`}
 `;

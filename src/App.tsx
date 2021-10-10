@@ -1,21 +1,37 @@
+import React, { Suspense, useState } from "react";
 import "./App.scss";
-import { useState } from "react";
 import Layout from "layout/index";
-import MoodBox from "components/moodbox";
-import MoodHistory from "components/moodhistory";
+
+//code-splitting
+const MoodBox = React.lazy(() => import("pages/moodbox"));
+const MoodHistory = React.lazy(() => import("pages/moodhistory"));
+
+export interface IData {
+  moodName: string;
+  moodBgColor: string;
+  moodBorderColor: string;
+  message: string;
+  emoji: string;
+  date?: string;
+  time?: string;
+}
+
+const centerLoadingIcon = {
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+};
 
 function App() {
   const [history, setHistory] = useState<any>([]);
   const [moodTracker, setMoodtracker] = useState<any>([]);
 
-  const trackMood = (moodName: string) => {
-    setMoodtracker((moodTracker: any) => [...moodTracker, moodName]);
+  const trackMood = (moodData: IData) => {
+    setMoodtracker((moodTracker: any) => [...moodTracker, moodData]);
   };
 
-  console.log(moodTracker, "moodTracker");
-
   const AddMoodToHistory = () => {
-    let reversedMoods: string[];
+    let reversedMoods: IData[];
     //make the latest moods appear first
     reversedMoods = [...moodTracker].reverse();
     //create a history of moods selected
@@ -24,15 +40,16 @@ function App() {
     setMoodtracker([]);
   };
 
-  console.log(history);
   return (
     <Layout>
-      <MoodBox
-        addMood={trackMood}
-        save={AddMoodToHistory}
-        selectedMood={moodTracker}
-      />
-      <MoodHistory moodHistory={history} />
+      <Suspense fallback={<div style={centerLoadingIcon}>Loading...</div>}>
+        <MoodBox
+          addMood={trackMood}
+          save={AddMoodToHistory}
+          selectedMood={moodTracker}
+        />
+        <MoodHistory moodHistory={history} />
+      </Suspense>
     </Layout>
   );
 }

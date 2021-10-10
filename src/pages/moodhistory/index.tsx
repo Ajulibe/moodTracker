@@ -3,6 +3,7 @@ import { ReactComponent as Cat } from "assets/smallcat.svg";
 import { ReactComponent as FadedCat } from "assets/fadedcat.svg";
 import { Container } from "./style";
 import { HistoryCard } from "components/historycard";
+import { IData } from "App";
 
 interface IProps {
   moodHistory: [];
@@ -29,8 +30,8 @@ const index: React.FC<IProps> = ({ moodHistory }) => {
         </div>
         {moodHistory.length !== 0 ? (
           <div className="container-history">
-            {moodHistory.map((item: string, i) => {
-              return <HistoryCard mood={item} key={`${i}${item}`} />;
+            {moodHistory.map((item: IData, i) => {
+              return <HistoryCard mood={item} key={`${i}${item.moodName}`} />;
             })}
           </div>
         ) : (
