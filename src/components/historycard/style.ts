@@ -63,6 +63,9 @@ export const Card = styled.div<Props>`
         font-size: 14px;
         line-height: 21px;
       }
+      @media only screen and (max-width: 340px) {
+        font-size: 12px;
+      }
     }
 
     &-date {
@@ -85,6 +88,9 @@ export const Card = styled.div<Props>`
 
     @media only screen and (max-width: 593px) {
       width: 100px;
+    }
+    @media only screen and (max-width: 340px) {
+      width: 60px;
     }
   }
 `;

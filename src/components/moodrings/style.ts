@@ -30,4 +30,10 @@ export const MoodRings = styled.div<hoverPick>`
     width: 35px;
     font-size: 16px;
   }
+
+  @media only screen and (max-width: 340px) {
+    height: 20px;
+    width: 20px;
+    font-size: 8px;
+  }
 `;
