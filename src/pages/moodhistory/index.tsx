@@ -1,5 +1,5 @@
 import React from "react";
-import { ReactComponent as Cat } from "assets/smallcat.svg";
+import Cat from "assets/smallcat.svg";
 import { ReactComponent as FadedCat } from "assets/fadedcat.svg";
 import { Container } from "./style";
 import { HistoryCard } from "components/historycard";
@@ -15,7 +15,11 @@ const index: React.FC<IProps> = ({ moodHistory }) => {
       <div className="container">
         <div className="container-header">
           <div>
-            <Cat />
+            <img
+              src={Cat}
+              className="container-header__image"
+              alt="cat-history"
+            />
           </div>
 
           <div className="container-header__left">
