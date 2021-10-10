@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, SaveButton } from "./style";
-import { ReactComponent as Cat } from "assets/cat.svg";
+import Cat from "assets/cat.svg";
 import { MoodRingsCmp } from "components/moodrings";
 import { moodData, mood } from "data/moods";
 import { IData } from "App";
@@ -17,7 +17,7 @@ const MoodBox: React.FC<IProps> = ({ addMood, save, selectedMood }) => {
     <Container>
       <div className="container">
         <div className="container-header">
-          <Cat />
+          <img src={Cat} className="container-header__image" alt="cat" />
         </div>
 
         <div className="container-question">
