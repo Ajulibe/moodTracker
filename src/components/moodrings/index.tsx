@@ -17,7 +17,6 @@ export const MoodRingsCmp: React.FC<MoodsEmojis> = ({
   onClick,
   boverBgColor,
 }) => {
-  console.log(boverBgColor, "borderColor");
   return (
     <MoodRings
       onClick={onClick}
