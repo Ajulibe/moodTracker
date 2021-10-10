@@ -31,6 +31,10 @@ export const Container = styled.div`
       @media only screen and (max-width: 593px) {
         font-size: 18px;
       }
+
+      @media only screen and (max-width: 340px) {
+        width: 20.4rem;
+      }
     }
 
     &-emoji {
@@ -39,6 +43,10 @@ export const Container = styled.div`
       width: 30rem;
       flex-wrap: wrap;
       justify-content: center;
+
+      @media only screen and (max-width: 340px) {
+        width: 20.4rem;
+      }
 
       & > * {
         margin-bottom: 10px;
@@ -69,6 +77,11 @@ export const Container = styled.div`
       margin-right: 0px;
       width: unset;
       margin-bottom: 20px;
+    }
+
+    @media only screen and (max-width: 340px) {
+      padding-left: 15px;
+      padding-right: 15px;
     }
   }
 `;

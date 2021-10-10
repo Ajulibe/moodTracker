@@ -13,12 +13,21 @@ export const Container = styled.div`
     padding-top: 40px;
     height: 54rem;
 
+    @media only screen and (max-width: 1095px) {
+      height: unset;
+      flex: 1;
+    }
+
     @media only screen and (max-width: 593px) {
       width: 40.4rem;
     }
 
     @media only screen and (max-width: 439px) {
       width: 30.4rem;
+    }
+
+    @media only screen and (max-width: 340px) {
+      width: 100%;
     }
 
     &-header {
@@ -36,6 +45,10 @@ export const Container = styled.div`
         font-size: 24px;
         line-height: 26px;
         color: ${COLORS.black};
+
+        @media only screen and (max-width: 340px) {
+          font-size: 18px;
+        }
       }
 
       &__text {
@@ -46,6 +59,12 @@ export const Container = styled.div`
         text-transform: uppercase;
         color: ${COLORS.fadedBlack};
         margin-top: 15px;
+
+        @media only screen and (max-width: 340px) {
+          margin-top: 8px;
+          font-size: 14px;
+          line-height: 18px;
+        }
       }
     }
 
@@ -67,6 +86,14 @@ export const Container = styled.div`
       margin-top: 5.4rem;
       ${flexmiddle};
       flex-direction: column;
+
+      @media only screen and (max-width: 1095px) {
+        margin-top: unset;
+      }
+
+      @media only screen and (max-width: 442px) {
+        width: 24.5rem;
+      }
 
       &-cat {
         margin-top: 7.7rem;

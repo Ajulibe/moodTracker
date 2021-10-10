@@ -21,7 +21,6 @@ export const Card = styled.div<Props>`
   width: 47.9rem;
   ${flexmiddle};
   justify-content: flex-start;
-  border: 1px solid red;
   background: ${COLORS.cardBg};
   box-sizing: border-box;
   border-radius: 5px;

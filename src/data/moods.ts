@@ -69,4 +69,18 @@ export const moodData: mood[] = [
     moodBgColor: COLORS.excitedBg,
     mooodBorderColor: COLORS.excitedBorder,
   },
+  {
+    emoji: "🥰",
+    message: "Cat was in love",
+    moodName: "inLove",
+    moodBgColor: COLORS.indifferentBg,
+    mooodBorderColor: COLORS.indifferentBorder,
+  },
+  {
+    emoji: "👹",
+    message: "Cat was a devil",
+    moodName: "devilCat",
+    moodBgColor: COLORS.excitedBg,
+    mooodBorderColor: COLORS.excitedBorder,
+  },
 ];
