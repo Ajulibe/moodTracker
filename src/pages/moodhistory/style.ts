@@ -74,7 +74,7 @@ export const Container = styled.div`
       padding: 20px;
 
       @media only screen and (max-width: 593px) {
-        padding: unset;
+        padding: 10px;
       }
     }
 
