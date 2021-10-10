@@ -17,9 +17,7 @@ export const MoodRings = styled.div<hoverPick>`
   background: ${COLORS.emptyMood};
   transition: all 0.2s ease-in-out;
   font-size: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
 
   &:hover {
     cursor: pointer;
@@ -30,6 +28,6 @@ export const MoodRings = styled.div<hoverPick>`
   @media only screen and (max-width: 593px) {
     height: 35px;
     width: 35px;
-    font-size: 15px;
+    font-size: 16px;
   }
 `;
