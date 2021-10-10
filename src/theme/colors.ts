@@ -14,6 +14,7 @@ export enum COLORS {
   //empty State
   emptyMood = "rgba(175, 170, 168, 0.2)",
   emptyMoodText = "rgba(175, 170, 168, 1)",
+  emptyMoodBorder = "rgba(175, 170, 168, 0.1)",
 
   //card
   cardBg = "rgba(243, 244, 246, 0.7)",

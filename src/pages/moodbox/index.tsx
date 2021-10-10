@@ -42,6 +42,7 @@ const MoodBox: React.FC<IProps> = ({ addMood, save, selectedMood }) => {
                   });
                 }}
                 name={item.moodName}
+                boverBgColor={item.moodBgColor}
                 borderColor={
                   selectedMood.some(
                     (data) => data["moodName"] === item.moodName

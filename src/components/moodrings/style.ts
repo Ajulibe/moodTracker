@@ -2,7 +2,13 @@ import styled from "styled-components";
 import { flexmiddle } from "sass/abstracts/mixins";
 import { COLORS } from "theme/colors";
 
-export const MoodRings = styled.div`
+interface Props {
+  bkgdColor?: string | null;
+}
+
+type hoverPick = Props;
+
+export const MoodRings = styled.div<hoverPick>`
   height: 55px;
   width: 55px;
   border-radius: 50%;
@@ -11,10 +17,14 @@ export const MoodRings = styled.div`
   background: ${COLORS.emptyMood};
   transition: all 0.2s ease-in-out;
   font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &:hover {
     cursor: pointer;
     transform: scale(1.1);
+    background-color: ${(props) => props.bkgdColor};
   }
 
   @media only screen and (max-width: 593px) {
