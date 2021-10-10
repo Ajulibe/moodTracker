@@ -45,6 +45,10 @@ export const Card = styled.div<Props>`
         : null}
   }
 
+  @media only screen and (max-width: 593px) {
+    transform: unset;
+  }
+
   .message {
     display: flex;
     flex-direction: column;
