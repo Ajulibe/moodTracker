@@ -69,7 +69,7 @@ export const Container = styled.div`
     }
 
     &-history {
-      overflow: scroll;
+      overflow-y: scroll;
       flex: 1;
       padding: 20px;
 

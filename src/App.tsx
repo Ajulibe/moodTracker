@@ -27,6 +27,8 @@ function App() {
   const [moodTracker, setMoodtracker] = useState<any>([]);
 
   const trackMood = (moodData: IData) => {
+    //remove previous moods from array
+    setMoodtracker([]); // uncomment to add multiple moods
     setMoodtracker((moodTracker: any) => [...moodTracker, moodData]);
   };
 
