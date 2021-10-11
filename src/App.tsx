@@ -1,6 +1,7 @@
 import React, { Suspense, useState } from "react";
 import "./App.scss";
 import Layout from "layout/index";
+import { Spinner } from "components/spinner";
 
 //code-splitting
 const MoodBox = React.lazy(() => import("pages/moodbox"));
@@ -44,7 +45,13 @@ function App() {
 
   return (
     <Layout>
-      <Suspense fallback={<div style={centerLoadingIcon}>Loading...</div>}>
+      <Suspense
+        fallback={
+          <div style={centerLoadingIcon}>
+            <Spinner />
+          </div>
+        }
+      >
         <MoodBox
           addMood={trackMood}
           save={AddMoodToHistory}

@@ -31,4 +31,7 @@ export enum COLORS {
   //button
   activeButtonBg = "rgba(18, 12, 53, 1)",
   disbaledButtonBg = "rgba(239, 238, 238, 1)",
+
+  //spinner
+  spinnerBg = "rgba(255,148,166,1)",
 }
