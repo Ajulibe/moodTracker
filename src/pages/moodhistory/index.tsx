@@ -6,7 +6,7 @@ import { HistoryCard } from "components/historycard";
 import { IData } from "App";
 
 interface IProps {
-  moodHistory: [];
+  moodHistory: IData[];
 }
 
 const index: React.FC<IProps> = ({ moodHistory }) => {

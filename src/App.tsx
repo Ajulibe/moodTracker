@@ -24,13 +24,13 @@ const centerLoadingIcon = {
 };
 
 function App() {
-  const [history, setHistory] = useState<any>([]);
-  const [moodTracker, setMoodtracker] = useState<any>([]);
+  const [history, setHistory] = useState<IData[]>([]);
+  const [moodTracker, setMoodtracker] = useState<IData[]>([]);
 
   const trackMood = (moodData: IData) => {
     //remove previous moods from array
     setMoodtracker([]); // uncomment to add multiple moods
-    setMoodtracker((moodTracker: any) => [...moodTracker, moodData]);
+    setMoodtracker((moodTracker: IData[]) => [...moodTracker, moodData]);
   };
 
   const AddMoodToHistory = () => {
@@ -38,7 +38,7 @@ function App() {
     //make the latest moods appear first
     reversedMoods = [...moodTracker].reverse();
     //create a history of moods selected
-    setHistory((history: any) => [...reversedMoods, ...history]);
+    setHistory((history: IData[]) => [...reversedMoods, ...history]);
     //reset the tracked moods
     setMoodtracker([]);
   };
